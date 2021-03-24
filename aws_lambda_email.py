@@ -73,6 +73,7 @@ def send_email(email_settings, bucketname, key, module):
     #----------------------
     # Send email
     #----------------------
+    # low-level client with the using Amazon Simple Email Service 
     ses = boto3.client('ses', region_name=email_region)
     email_status = ses.send_raw_email(RawMessage={
                     'Data': msg.as_string(),
